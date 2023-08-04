@@ -40,11 +40,8 @@ app.post('/post', (req, res) => {
     console.log(req.body)
     if (err) throw err;
     console.log(result);
+    res.sendFile(path.join(__dirname, "./", "html", "thanks.html"));
   });
-});
-
-app.get("/menu", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "../", "views", "menu.html"));
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
